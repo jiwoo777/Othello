@@ -77,7 +77,11 @@ void main(void) {
 	  
 	  
 	  //돌을 놓을 수 있는지 확인하기
-	  
+	  if((board[row][column] == 1) || (board[row][column] == 2))
+	  {
+	  	printf("이미 돌이 놓여있습니다.");
+	  	
+	   } 
 	  
 	   
     }
