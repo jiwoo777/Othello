@@ -82,10 +82,19 @@ void main(void) {
 	  	printf("이미 돌이 놓여있습니다.");
 	  	
 	   } 
-	  
 	   
-    }
-    
+	//돌 뒤집기  
+	if(board[row][column] == 1)
+		board[row][column]=2;
+   	else if(board[row][column] == 2)
+   	    board[row][column]=1;
+			        
+	   
+}
+
+
+
+
     
 void gotoxy(int x, int y)//커서 이동 함수  
 {
