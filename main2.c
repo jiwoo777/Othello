@@ -76,7 +76,7 @@ void main(void) {
 	  return 0;
 	  
 	  
-	  //돌을 놓을 수 있는지 확인하기
+	  //돌을 놓을 수 있는지 확인하기, 흰돌이나 검은 돌이 있으면 아래 문자 출력  
 	  if((board[row][column] == 1) || (board[row][column] == 2))
 	  {
 	  	printf("이미 돌이 놓여있습니다.");
@@ -84,9 +84,9 @@ void main(void) {
 	   } 
 	   
 	//돌 뒤집기  
-	if(board[row][column] == 1)
+	if(board[row][column] == 1)//흰 돌이면 검은 돌로 바꾸기 
 		board[row][column]=2;
-   	else if(board[row][column] == 2)
+   	else if(board[row][column] == 2)//검은 돌이면 흰돌로 바꾸기  
    	    board[row][column]=1;
 			        
 	   
