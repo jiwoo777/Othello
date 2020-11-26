@@ -9,8 +9,8 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 void main(void) { 
-
-	int board[8][8] = {//초기 보드판 만들기 
+    //초기 보드판 만들기// 
+	int board[8][8] = {
      {0,0,0,0,0,0,0,0},
      {0,0,0,0,0,0,0,0},
      {0,0,0,0,0,0,0,0},
@@ -32,22 +32,28 @@ void main(void) {
    	 	   else if(board[row][column] == 1)// 흰돌 둔 곳 표시 
 		        printf("|O|");
 		   else if(board[row][column] == 2)// 검은돌 둔 곳 표시 
-		    	printf("|X|");   		
+		    	printf("|X|");   
+		   else if(board[row][column] == 3)// 커서 놓을 때 표시
+		        printf("|+|"); 			
 	    } 
-	     printf("\n");
+	     printf("\n");   
       }
       return board[8][8]; 
       
-      
-      char Choice = 0;//선택한 지점  정의  
-      int x = 0, y = 0;//x좌표, y좌표   
+     //돌 움직이기//      
+      char Choice = 0;//선택한 지점 변수  정의  
+      int x = 0, y = 0;//x좌표, y좌표 
+	  int prev;//커서를 선택하기 전 모습 저장을 위한 변수? 
+	    
       while(true)
       {
       	gotoxy(x,y);//변수 x와 y에 저장된 값으로 좌표를 이동
-		printf("+");//커서 표시
+		prev=board[x,y];//선택 전 상태 저장 
+		
 		if(kbhit())
 		{
 		    Choice = getch();
+		    board[x][y] = 3;//선택 시 |+| 출력 
 			switch(Choice)
 			{
 				case 'w' : //위로 이동
@@ -68,6 +74,12 @@ void main(void) {
 		   }   
 	  }
 	  return 0;
+	  
+	  
+	  //돌을 놓을 수 있는지 확인하기
+	  
+	  
+	   
     }
     
     
